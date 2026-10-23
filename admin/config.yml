@@ -1,4 +1,4 @@
-# Pannello di gestione prodotti (Decap CMS)
+# Pannello di gestione del sito (Decap CMS)
 backend:
   name: github
   repo: agnella64/lechicchedilulu-sito
@@ -7,6 +7,58 @@ locale: it
 media_folder: images
 public_folder: /images
 collections:
+  - name: pagine
+    label: Pagine del sito
+    files:
+      - name: contenuti
+        label: Testi e foto delle sezioni
+        file: data/content.json
+        fields:
+          - label: Home
+            name: home
+            widget: object
+            fields:
+              - {label: Titolo, name: titolo, widget: string}
+              - {label: Testo (una riga vuota separa i paragrafi), name: testo, widget: text}
+              - {label: Scritta del pulsante, name: testo_pulsante, widget: string}
+              - {label: Foto principale, name: foto, widget: image, required: false}
+          - label: Galleria
+            name: galleria
+            widget: object
+            fields:
+              - {label: Titolo, name: titolo, widget: string}
+              - {label: Testo, name: testo, widget: text, required: false}
+              - {label: Foto della galleria (scorrono in orizzontale), name: foto, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
+          - label: Negozio (testo introduttivo)
+            name: negozio
+            widget: object
+            fields:
+              - {label: Titolo, name: titolo, widget: string}
+              - {label: Testo, name: testo, widget: text, required: false}
+          - label: Chi sono
+            name: chi_sono
+            widget: object
+            fields:
+              - {label: Titolo, name: titolo, widget: string}
+              - {label: Testo (una riga vuota separa i paragrafi), name: testo, widget: text}
+              - {label: Foto (una o più), name: foto, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
+          - label: Contatti
+            name: contatti
+            widget: object
+            fields:
+              - {label: Titolo, name: titolo, widget: string}
+              - {label: Testo, name: testo, widget: text, required: false}
+              - label: Modi per contattarti (il primo viene usato dai pulsanti del negozio)
+                name: contatti
+                widget: list
+                required: false
+                fields:
+                  - label: Tipo
+                    name: tipo
+                    widget: select
+                    options: [{label: WhatsApp, value: whatsapp}, {label: Instagram, value: instagram}, {label: Facebook, value: facebook}, {label: TikTok, value: tiktok}, {label: Email, value: email}, {label: Telefono, value: telefono}, {label: Altro link, value: altro}]
+                  - {label: Scritta del pulsante, name: etichetta, widget: string}
+                  - {label: "Valore: numero (WhatsApp, telefono), email, nome utente (Instagram) oppure link completo con https://", name: valore, widget: string}
   - name: negozio
     label: Negozio
     files:
@@ -27,4 +79,4 @@ collections:
               - {label: Altre foto dello stesso gioiello, name: altre_foto, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
               - {label: Mostra nel negozio, name: in_vendita, widget: boolean, default: true}
               - {label: Ancora disponibile, name: disponibile, widget: boolean, default: true, hint: "Disattiva quando il pezzo è venduto"}
-              - {label: "Link di pagamento (PayPal o Stripe)", name: link_pagamento, widget: string, required: false, hint: "Se vuoto, il cliente ti scrive su Instagram"}
+              - {label: "Link di pagamento (PayPal o Stripe)", name: link_pagamento, widget: string, required: false, hint: "Se vuoto, il cliente ti contatta con il primo contatto della pagina Contatti"}
