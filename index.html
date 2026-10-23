@@ -11,102 +11,108 @@
 <style>
 :root{--perla:#edebf0;--bianco:#fff;--prugna:#2b2033;--turchese:#1f6f6d;--corallo:#c9473a;--serif:"Playfair Display",Georgia,serif;--sans:"Jost",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{font:400 1.05rem/1.65 var(--sans);color:var(--prugna);background:var(--perla)}
 img{display:block;max-width:100%}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--turchese);outline-offset:3px}
-header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.8rem clamp(1rem,4vw,3rem);background:rgba(237,235,240,.94);backdrop-filter:blur(6px)}
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.7rem clamp(1rem,4vw,3rem);background:rgba(237,235,240,.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(43,32,51,.12)}
 .logo{font:italic 500 1.5rem var(--serif);text-decoration:none}
-nav{display:flex;gap:1.4rem}
-nav a{text-decoration:none;font-weight:500}
+nav{display:flex;gap:1.3rem;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:.98rem}
 nav a:hover{color:var(--turchese)}
-section{padding:clamp(3rem,8vw,6rem) clamp(1rem,4vw,3rem)}
+section{padding:clamp(2.2rem,6vw,4.5rem) clamp(1rem,4vw,3rem)}
 .wrap{max-width:1180px;margin:auto}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
-h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.6rem}
-.sub{max-width:60ch;margin-bottom:2.2rem}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:.5rem}
+p+p{margin-top:.9rem}
+.sub{max-width:60ch;margin-bottom:1.6rem}
 .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,5vw,4rem);align-items:center}
-.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-style:italic;font-weight:400}
-.hero p{margin:1.2rem 0 1.8rem;max-width:42ch;font-size:1.15rem}
-.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:50% 50% 1rem 1rem / 28% 28% 1rem 1rem}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.8rem);font-style:italic;font-weight:400}
+.hero .t{margin:1.2rem 0 1.8rem;max-width:44ch;font-size:1.15rem}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:50% 50% 1rem 1rem / 28% 28% 1rem 1rem;box-shadow:0 20px 50px -25px rgba(43,32,51,.6)}
 .btn{display:inline-block;padding:.8rem 1.6rem;border:0;border-radius:2rem;background:var(--turchese);color:#fff;font:500 1rem var(--sans);text-decoration:none;cursor:pointer}
 .btn:hover{background:var(--prugna)}
-.btn.ghost{background:transparent;color:var(--prugna);border:1.5px solid var(--prugna)}
-.btn.ghost:hover{background:var(--prugna);color:#fff}
-#creazioni{background:var(--bianco)}
-.gallery{columns:3 260px;column-gap:1rem}
-.gallery button{display:block;width:100%;margin:0 0 1rem;padding:0;border:0;background:none;cursor:zoom-in;break-inside:avoid}
-.gallery img{width:100%;height:auto;border-radius:.5rem}
+.btn.light{background:#fff;color:var(--prugna)}
+.btn.light:hover{background:var(--perla)}
+.dark{background:var(--prugna);color:#fff}
+.dark .btn:hover{background:var(--turchese)}
+#galleria{padding-block:clamp(1.8rem,4vw,2.8rem)}
+.ghead{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1rem}
+.ghead h2{margin:0}
+.arrows{display:flex;gap:.5rem}
+.arrows button{width:2.6rem;height:2.6rem;border:1.5px solid #fff;border-radius:50%;background:none;color:#fff;font-size:1.3rem;cursor:pointer}
+.arrows button:hover{background:#fff;color:var(--prugna)}
+.strip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.8rem;scrollbar-width:thin;scrollbar-color:#fff3 transparent}
+.strip button{flex:0 0 auto;height:min(42vh,320px);padding:0;border:0;background:none;scroll-snap-align:start;cursor:zoom-in}
+.strip img{height:100%;width:auto;border-radius:.5rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.6rem}
-.card{background:var(--bianco);border-radius:.5rem;overflow:hidden;display:flex;flex-direction:column}
+.card{background:var(--bianco);border-radius:.5rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px -22px rgba(43,32,51,.7)}
 .card button.pic{padding:0;border:0;background:none;cursor:pointer}
 .card img{width:100%;aspect-ratio:1;object-fit:cover}
 .card .body{padding:1rem 1.1rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
 .card h3{font-size:1.2rem}
 .price{font-weight:500;color:var(--corallo)}
 .card .btn{margin-top:auto;text-align:center;font-size:.95rem;padding:.65rem 1rem}
-.sold{color:var(--prugna);opacity:.7;font-style:italic}
+.sold{font-style:italic;opacity:.7}
 #chi{background:var(--bianco)}
-#chi p{max-width:62ch;margin-bottom:1rem}
+.chi{display:grid;gap:clamp(1.5rem,4vw,3rem);grid-template-columns:1fr}
+.chi.con-foto{grid-template-columns:1.1fr .9fr;align-items:center}
+.chi .t{max-width:62ch}
+.fotochi{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.fotochi img{width:100%;border-radius:.6rem;object-fit:cover;aspect-ratio:4/5}
+.fotochi img:only-child{aspect-ratio:auto}
+.links{display:flex;flex-wrap:wrap;gap:.8rem}
 dialog{border:0;border-radius:.6rem;padding:0;max-width:min(920px,94vw);width:100%;background:var(--bianco);color:var(--prugna)}
 dialog::backdrop{background:rgba(43,32,51,.72)}
 .dlg{display:grid;grid-template-columns:1.2fr 1fr;max-height:90vh;overflow:auto}
 .dlg img{width:100%;height:100%;max-height:90vh;object-fit:cover}
 .dlg .txt{padding:2rem 1.6rem;display:flex;flex-direction:column;gap:.8rem}
+.dlg.solo{grid-template-columns:1fr}
+.dlg.solo img{object-fit:contain}
 .pics{display:flex;flex-direction:column;min-height:0}
 .pics>img{flex:1;min-height:0;max-height:calc(90vh - 80px)}
 .thumbs{display:flex;gap:.5rem;padding:.5rem;background:var(--perla);overflow-x:auto}
 .thumbs button{flex:0 0 64px;padding:0;border:2px solid transparent;border-radius:.3rem;background:none;cursor:pointer}
 .thumbs button[aria-current="true"]{border-color:var(--turchese)}
 .thumbs img{width:60px;height:60px;max-height:none;object-fit:cover;border-radius:.2rem}
-.dlg.solo{grid-template-columns:1fr}
 .close{position:absolute;top:.6rem;right:.6rem;width:2.6rem;height:2.6rem;border:0;border-radius:50%;background:#fff;color:var(--prugna);font-size:1.5rem;cursor:pointer}
-footer{padding:2rem;text-align:center;font-size:.9rem}
-@media(max-width:760px){.hero,.dlg{grid-template-columns:1fr}.hero img{order:-1;max-height:420px}nav{gap:1rem;font-size:.95rem}}
+footer{padding:1.6rem;text-align:center;font-size:.9rem}
+[hidden]{display:none!important}
+@media(max-width:760px){.hero,.dlg,.chi.con-foto{grid-template-columns:1fr}.hero img{order:-1;max-height:420px}nav{gap:.9rem;font-size:.92rem}.strip button{height:min(36vh,260px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <header>
   <a class="logo" href="#top">Le Chicche di Lulù</a>
-  <nav aria-label="Menu principale">
-    <a href="#creazioni">Creazioni</a><a href="#negozio">Negozio</a><a href="#chi">Chi sono</a><a href="#contatti">Contatti</a>
-  </nav>
+  <nav aria-label="Menu principale"><a href="#top">Home</a><a href="#galleria">Galleria</a><a href="#negozio">Negozio</a><a href="#chi">Chi sono</a><a href="#contatti">Contatti</a></nav>
 </header>
 <main id="top">
 <section><div class="wrap hero">
-  <div>
-    <h1>Gioielli unici, realizzati a mano con amore</h1>
-    <p>Collane, bracciali e orecchini lavorati a uncinetto e a intreccio, con fili di seta, perle, pietre dure e quarzi.</p>
-    <a class="btn" href="#negozio">Vai al negozio</a>
-  </div>
-  <img src="images/gioiello-07.jpg" alt="Tre collane con turchese, perle e corallo indossate" fetchpriority="high">
+  <div><h1 id="h-t"></h1><div class="t" id="h-p"></div><a class="btn" id="h-b" href="#negozio"></a></div>
+  <img id="h-i" alt="Gioiello fatto a mano" fetchpriority="high">
 </div></section>
 
-<section id="creazioni"><div class="wrap">
-  <h2>Le creazioni</h2>
-  <p class="sub">Ogni pezzo nasce a mano, uno alla volta. Tocca una foto per ingrandirla.</p>
-  <div class="gallery" id="gallery"></div>
+<section id="galleria" class="dark"><div class="wrap">
+  <div class="ghead"><div><h2 id="g-t"></h2><div id="g-p"></div></div>
+  <div class="arrows"><button type="button" id="gp" aria-label="Foto precedenti">‹</button><button type="button" id="gn" aria-label="Foto successive">›</button></div></div>
+  <div class="strip" id="strip" tabindex="0" aria-label="Galleria di foto"></div>
 </div></section>
 
 <section id="negozio"><div class="wrap">
-  <h2>Negozio</h2>
-  <p class="sub">I gioielli disponibili. Per ordinare o avere più informazioni, scrivimi su Instagram.</p>
+  <h2 id="n-t"></h2><div class="sub" id="n-p"></div>
   <div class="grid" id="shop"><p>Caricamento dei prodotti…</p></div>
 </div></section>
 
-<section id="chi"><div class="wrap">
-  <h2>Chi sono</h2>
-  <p>Per me creare è una passione, un regalo. Ogni pietra ha una storia, e le mie mani eseguono ciò che l'emozione del momento suscita.</p>
-  <p>Lavoro a uncinetto e con la tecnica dell'intreccio, usando fili di seta, perle vere, pietre dure, quarzi, corallo e chiusure in argento.</p>
-</div></section>
+<section id="chi"><div class="wrap"><div class="chi" id="chi-box">
+  <div class="t"><h2 id="c-t"></h2><div id="c-p"></div></div>
+  <div class="fotochi" id="c-f"></div>
+</div></div></section>
 
-<section id="contatti"><div class="wrap">
-  <h2>Contatti</h2>
-  <p class="sub">Per ordini, informazioni o gioielli su misura, scrivimi su Instagram.</p>
-  <a class="btn" href="https://ig.me/m/lechicchedilulu" target="_blank" rel="noopener">Scrivimi su Instagram</a>
-  <a class="btn ghost" href="https://www.instagram.com/lechicchedilulu/" target="_blank" rel="noopener">Vedi il profilo</a>
+<section id="contatti" class="dark"><div class="wrap">
+  <h2 id="k-t"></h2><div class="sub" id="k-p"></div>
+  <div class="links" id="k-l"></div>
 </div></section>
 </main>
 <footer>© <span id="y"></span> Le Chicche di Lulù · Fatto a mano con amore</footer>
@@ -114,29 +120,53 @@ footer{padding:2rem;text-align:center;font-size:.9rem}
 <dialog id="dlg" aria-label="Dettaglio"><button class="close" aria-label="Chiudi">×</button><div class="dlg" id="dlgbody"></div></dialog>
 
 <script>
-const IG="https://ig.me/m/lechicchedilulu",dlg=document.getElementById("dlg"),body=document.getElementById("dlgbody");
+const $=id=>document.getElementById(id),dlg=$("dlg"),body=$("dlgbody");
 const euro=new Intl.NumberFormat("it-IT",{style:"currency",currency:"EUR"});
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const cl=u=>esc(String(u||"").replace(/^\//,"")),src=p=>cl(p.immagine);
-document.getElementById("y").textContent=new Date().getFullYear();
+const pa=u=>String(u||"").replace(/^\//,""),cl=u=>esc(pa(u)),src=p=>cl(p.immagine);
+const paras=t=>String(t||"").split(/\n\s*\n/).filter(x=>x.trim()).map(x=>`<p>${esc(x).replace(/\n/g,"<br>")}</p>`).join("");
+$("y").textContent=new Date().getFullYear();
+function link(c){const v=String(c.valore||"").trim();if(!v)return"";
+  switch(c.tipo){case"whatsapp":return"https://wa.me/"+v.replace(/\D/g,"");case"email":return"mailto:"+v;case"telefono":return"tel:"+v.replace(/\s/g,"");
+  case"instagram":return/^https:\/\//.test(v)?v:"https://instagram.com/"+v.replace(/^@/,"");default:return/^https:\/\//.test(v)?v:""}}
+let ORD={href:"https://ig.me/m/lechicchedilulu",label:"Instagram"};
 function buy(p){
   if(p.disponibile===false)return '<p class="sold">Venduto</p>';
   const ok=/^https:\/\//.test(p.link_pagamento||"");
-  return `<a class="btn" target="_blank" rel="noopener" href="${ok?esc(p.link_pagamento):IG}">${ok?"Acquista":"Chiedi info su Instagram"}</a>`;
+  return `<a class="btn" target="_blank" rel="noopener" href="${ok?esc(p.link_pagamento):esc(ORD.href)}">${ok?"Acquista":"Chiedi info su "+esc(ORD.label)}</a>`;
 }
 const price=p=>`<p class="price">${p.prezzo!=null&&p.prezzo!==""?euro.format(p.prezzo):"Prezzo su richiesta"}</p>`;
 function open(html,solo){body.className="dlg"+(solo?" solo":"");body.innerHTML=html;dlg.showModal()}
-fetch("data/products.json").then(r=>r.json()).then(({products})=>{
-  document.getElementById("gallery").innerHTML=products.map((p,i)=>`<button data-g="${i}" aria-label="Ingrandisci: ${esc(p.nome)}"><img loading="lazy" src="${src(p)}" alt="${esc(p.nome)}"></button>`).join("");
+const J=u=>fetch(u).then(r=>r.json());
+Promise.all([J("data/content.json"),J("data/products.json")]).then(([c,{products}])=>{
+  const h=c.home||{},g=c.galleria||{},n=c.negozio||{},w=c.chi_sono||{},k=c.contatti||{};
+  $("h-t").textContent=h.titolo||"";$("h-p").innerHTML=paras(h.testo);$("h-b").textContent=h.testo_pulsante||"Vai al negozio";
+  if(h.foto)$("h-i").src=pa(h.foto);else $("h-i").hidden=true;
+  $("g-t").textContent=g.titolo||"Galleria";$("g-p").innerHTML=paras(g.testo);
+  const gf=(g.foto||[]).filter(Boolean);
+  $("strip").innerHTML=gf.map((u,i)=>`<button type="button" data-g="${i}" aria-label="Ingrandisci foto ${i+1}"><img loading="lazy" src="${cl(u)}" alt="Gioiello Le Chicche di Lulù, foto ${i+1}"></button>`).join("");
+  $("n-t").textContent=n.titolo||"Negozio";$("n-p").innerHTML=paras(n.testo);
+  $("c-t").textContent=w.titolo||"Chi sono";$("c-p").innerHTML=paras(w.testo);
+  const cf=(w.foto||[]).filter(Boolean);
+  $("c-f").innerHTML=cf.map(u=>`<img loading="lazy" src="${cl(u)}" alt="Le Chicche di Lulù">`).join("");
+  $("chi-box").classList.toggle("con-foto",cf.length>0);$("c-f").hidden=!cf.length;
+  $("k-t").textContent=k.titolo||"Contatti";$("k-p").innerHTML=paras(k.testo);
+  const cs=(k.contatti||[]).map(x=>({...x,href:link(x)})).filter(x=>x.href);
+  if(cs.length)ORD={href:cs[0].href,label:cs[0].etichetta||cs[0].tipo};
+  $("k-l").innerHTML=cs.map((x,i)=>`<a class="btn ${i?"light":""}" target="_blank" rel="noopener" href="${esc(x.href)}">${esc(x.etichetta||x.tipo)}</a>`).join("");
   const sale=products.filter(p=>p.in_vendita!==false);
-  document.getElementById("shop").innerHTML=sale.length?sale.map(p=>`<article class="card"><button class="pic" data-s="${products.indexOf(p)}" aria-label="Dettagli: ${esc(p.nome)}"><img loading="lazy" src="${src(p)}" alt="${esc(p.nome)}"></button><div class="body"><h3>${esc(p.nome)}</h3>${price(p)}${buy(p)}</div></article>`).join(""):"<p>Presto nuovi gioielli.</p>";
+  $("shop").innerHTML=sale.length?sale.map(p=>`<article class="card"><button class="pic" data-s="${products.indexOf(p)}" aria-label="Dettagli: ${esc(p.nome)}"><img loading="lazy" src="${src(p)}" alt="${esc(p.nome)}"></button><div class="body"><h3>${esc(p.nome)}</h3>${price(p)}${buy(p)}</div></article>`).join(""):"<p>Presto nuovi gioielli.</p>";
   document.addEventListener("click",e=>{
-    const g=e.target.closest("[data-g]"),s=e.target.closest("[data-s]"),t=e.target.closest("[data-t]");
-    if(g){const p=products[g.dataset.g];open(`<img src="${src(p)}" alt="${esc(p.nome)}">`,true)}
-    if(t){const m=document.getElementById("mainpic");m.src=t.dataset.t;t.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-current",b===t));}
-    if(s){const p=products[s.dataset.s],pics=[p.immagine,...(p.altre_foto||[])].filter(Boolean);open(`<div class="pics"><img id="mainpic" src="${src(p)}" alt="${esc(p.nome)}">${pics.length>1?'<div class="thumbs">'+pics.map((x,i)=>`<button data-t="${cl(x)}" aria-label="Foto ${i+1}" aria-current="${i===0}"><img src="${cl(x)}" alt=""></button>`).join("")+"</div>":""}</div><div class="txt"><h3>${esc(p.nome)}</h3>${price(p)}<p>${esc(p.descrizione)}</p>${buy(p)}</div>`)}
+    const a=e.target.closest("[data-g]"),s=e.target.closest("[data-s]"),t=e.target.closest("[data-t]");
+    if(a)open(`<img src="${cl(gf[a.dataset.g])}" alt="Gioiello Le Chicche di Lulù">`,true);
+    if(t){$("mainpic").src=t.dataset.t;t.parentNode.querySelectorAll("button").forEach(b=>b.setAttribute("aria-current",b===t))}
+    if(s){const p=products[s.dataset.s],pics=[p.immagine,...(p.altre_foto||[])].filter(Boolean);
+      open(`<div class="pics"><img id="mainpic" src="${src(p)}" alt="${esc(p.nome)}">${pics.length>1?'<div class="thumbs">'+pics.map((x,i)=>`<button data-t="${cl(x)}" aria-label="Foto ${i+1}" aria-current="${i===0}"><img src="${cl(x)}" alt=""></button>`).join("")+"</div>":""}</div><div class="txt"><h3>${esc(p.nome)}</h3>${price(p)}<p>${esc(p.descrizione)}</p>${buy(p)}</div>`)}
   });
-}).catch(()=>{document.getElementById("shop").innerHTML="<p>Non riesco a caricare i prodotti. Apri il sito dall'indirizzo pubblicato.</p>"});
+}).catch(()=>{$("shop").innerHTML="<p>Non riesco a caricare i contenuti. Apri il sito dall'indirizzo pubblicato.</p>"});
+const st=$("strip"),step=()=>Math.max(st.clientWidth*.8,200);
+$("gp").onclick=()=>st.scrollBy({left:-step(),behavior:"smooth"});
+$("gn").onclick=()=>st.scrollBy({left:step(),behavior:"smooth"});
 dlg.addEventListener("click",e=>{if(e.target===dlg||e.target.classList.contains("close"))dlg.close()});
 </script>
 </body>
