@@ -3,7 +3,7 @@
     {
       "nome": "Collane turchese e corallo",
       "descrizione": "Tre collane in tre lunghezze, lavorate interamente a mano all'uncinetto. Un filo di seta unisce piccole perle, turchese e scaglie di corallo rosso (vero).",
-      "prezzo": null,
+      "prezzo": 0,
       "immagine": "/images/gioiello-07.jpg",
       "in_vendita": true,
       "disponibile": true,
