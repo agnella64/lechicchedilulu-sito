@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Area riservata</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;display:grid;place-items:center;padding:1rem;background:#edebf0;color:#2b2033;font:400 1.05rem/1.5 "Jost",system-ui,sans-serif}
+form{width:100%;max-width:380px;background:#fff;padding:2rem 1.6rem;border-radius:.6rem;display:grid;gap:1rem}
+h1{font:italic 500 1.7rem "Playfair Display",Georgia,serif}
+label{display:grid;gap:.3rem;font-weight:500}
+input{padding:.7rem .8rem;border:1.5px solid #2b2033;border-radius:.4rem;font:inherit}
+button{padding:.8rem;border:0;border-radius:2rem;background:#1f6f6d;color:#fff;font:500 1rem "Jost",sans-serif;cursor:pointer}
+button:hover{background:#2b2033}
+:focus-visible{outline:3px solid #1f6f6d;outline-offset:2px}
+#err{color:#b3261e;min-height:1.4em;font-size:.95rem}
+</style></head><body>
+<form id="f" autocomplete="on">
+<h1>Area riservata</h1>
+<label>Nome utente<input id="u" autocomplete="username" required></label>
+<label>Password<input id="p" type="password" autocomplete="current-password" required></label>
+<p id="err" role="alert"></p>
+<button type="submit">Entra</button>
+</form>
+<script>
+const SALT="lulu-2026",HASH="84551b57c1d9fab4910c0fc291b04ec5e54b874c9d44bde2c53d54bdaeead95c";
+document.getElementById("f").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const t=SALT+document.getElementById("u").value+":"+document.getElementById("p").value;
+  const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));
+  const h=[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+  if(h===HASH){try{sessionStorage.setItem("lulu_ok","1")}catch(_){}location.href="admin/"}
+  else document.getElementById("err").textContent="Nome utente o password non corretti.";
+});
+</script></body></html>

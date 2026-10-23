@@ -1,0 +1,30 @@
+# Pannello di gestione prodotti (Decap CMS)
+backend:
+  name: github
+  repo: agnella64/lechicchedilulu-sito
+  branch: main
+locale: it
+media_folder: images
+public_folder: /images
+collections:
+  - name: negozio
+    label: Negozio
+    files:
+      - name: prodotti
+        label: Elenco prodotti
+        file: data/products.json
+        fields:
+          - label: Prodotti
+            name: products
+            widget: list
+            label_singular: prodotto
+            summary: "{{fields.nome}}"
+            fields:
+              - {label: Nome del gioiello, name: nome, widget: string}
+              - {label: Descrizione del lavoro, name: descrizione, widget: text}
+              - {label: Prezzo in euro, name: prezzo, widget: number, value_type: float, min: 0, required: false, hint: "Lascia vuoto per mostrare 'Prezzo su richiesta'"}
+              - {label: Foto, name: immagine, widget: image}
+              - {label: Altre foto dello stesso gioiello, name: altre_foto, widget: list, required: false, field: {label: Foto, name: foto, widget: image}}
+              - {label: Mostra nel negozio, name: in_vendita, widget: boolean, default: true}
+              - {label: Ancora disponibile, name: disponibile, widget: boolean, default: true, hint: "Disattiva quando il pezzo è venduto"}
+              - {label: "Link di pagamento (PayPal o Stripe)", name: link_pagamento, widget: string, required: false, hint: "Se vuoto, il cliente ti scrive su Instagram"}
