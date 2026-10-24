@@ -1,53 +1,52 @@
 {
- "home": {
-  "titolo": "Gioielli unici, realizzati a mano con amore",
-  "testo": "Collane, bracciali e orecchini lavorati a uncinetto e a intreccio, con fili di seta, perle, pietre dure e quarzi.",
-  "testo_pulsante": "Vai al negozio",
-  "foto": "/images/gioiello-07.jpg"
- },
- "galleria": {
-  "titolo": "Galleria",
-  "testo": "Ogni pezzo nasce a mano, uno alla volta. Scorri e tocca una foto per ingrandirla.",
-  "foto": [
-   "/images/gioiello-07.jpg",
-   "/images/gioiello-01.jpg",
-   "/images/gioiello-05.jpg",
-   "/images/gioiello-03.jpg",
-   "/images/gioiello-04.jpg",
-   "/images/gioiello-08.jpg",
-   "/images/gioiello-17.jpg",
-   "/images/gioiello-15.jpg",
-   "/images/gioiello-14.jpg",
-   "/images/gioiello-13.jpg",
-   "/images/gioiello-12.jpg",
-   "/images/gioiello-10.jpg",
-   "/images/gioiello-16.jpg",
-   "/images/gioiello-18.jpg",
-   "/images/gioiello-09.jpg",
-   "/images/gioiello-02.jpg",
-   "/images/gioiello-06.jpg",
-   "/images/gioiello-11.jpg",
-   "/images/gioiello-19.jpg"
-  ]
- },
- "negozio": {
-  "titolo": "Negozio",
-  "testo": "I gioielli disponibili. Per ordinare o avere più informazioni, scrivimi."
- },
- "chi_sono": {
-  "titolo": "Chi sono",
-  "testo": "Per me creare è una passione, un regalo. Ogni pietra ha una storia, e le mie mani eseguono ciò che l'emozione del momento suscita.\n\nLavoro a uncinetto e con la tecnica dell'intreccio, usando fili di seta, perle vere, pietre dure, quarzi, corallo e chiusure in argento.",
-  "foto": []
- },
- "contatti": {
-  "titolo": "Contatti",
-  "testo": "Per ordini, informazioni o gioielli su misura, scrivimi.",
-  "contatti": [
-   {
-    "tipo": "instagram",
-    "etichetta": "Instagram",
-    "valore": "https://ig.me/m/lechicchedilulu"
-   }
-  ]
- }
+  "home": {
+    "titolo": "Gioielli unici, realizzati a mano con amore",
+    "testo": "Collane, bracciali e orecchini lavorati a uncinetto e a intreccio, con fili di seta, perle, pietre dure e quarzi.",
+    "testo_pulsante": "Vai al negozio",
+    "foto": "/images/gioiello-07.jpg"
+  },
+  "galleria": {
+    "titolo": "Galleria",
+    "testo": "Ogni pezzo nasce a mano, uno alla volta. Scorri e tocca una foto per ingrandirla.",
+    "foto": [
+      "/images/gioiello-07.jpg",
+      "/images/gioiello-01.jpg",
+      "/images/gioiello-05.jpg",
+      "/images/gioiello-03.jpg",
+      "/images/gioiello-04.jpg",
+      "/images/gioiello-08.jpg",
+      "/images/gioiello-15.jpg",
+      "/images/gioiello-14.jpg",
+      "/images/gioiello-13.jpg",
+      "/images/gioiello-12.jpg",
+      "/images/gioiello-10.jpg",
+      "/images/gioiello-16.jpg",
+      "/images/gioiello-18.jpg",
+      "/images/gioiello-09.jpg",
+      "/images/gioiello-02.jpg",
+      "/images/gioiello-06.jpg",
+      "/images/gioiello-11.jpg",
+      "/images/gioiello-19.jpg"
+    ]
+  },
+  "negozio": {
+    "titolo": "Negozio",
+    "testo": "I gioielli disponibili. Per ordinare o avere più informazioni, scrivimi."
+  },
+  "chi_sono": {
+    "titolo": "Chi sono",
+    "testo": "Per me creare è una passione, un regalo. Ogni pietra ha una storia, e le mie mani eseguono ciò che l'emozione del momento suscita.\n\nLavoro a uncinetto e con la tecnica dell'intreccio, usando fili di seta, perle vere, pietre dure, quarzi, corallo e chiusure in argento.",
+    "foto": []
+  },
+  "contatti": {
+    "titolo": "Contatti",
+    "testo": "Per ordini, informazioni o gioielli su misura, scrivimi.",
+    "contatti": [
+      {
+        "tipo": "instagram",
+        "etichetta": "Instagram",
+        "valore": "https://ig.me/m/lechicchedilulu"
+      }
+    ]
+  }
 }
