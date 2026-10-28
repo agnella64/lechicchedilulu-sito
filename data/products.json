@@ -176,7 +176,7 @@
       "prezzo": null,
       "immagine": "/images/gioiello-19.jpg",
       "in_vendita": true,
-      "disponibile": true,
+      "disponibile": false,
       "link_pagamento": "",
       "altre_foto": []
     },
