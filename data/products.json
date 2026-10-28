@@ -179,6 +179,13 @@
       "disponibile": true,
       "link_pagamento": "",
       "altre_foto": []
+    },
+    {
+      "in_vendita": true,
+      "disponibile": true,
+      "nome": "Collana con pietre di agata muschiata e fluorite.",
+      "descrizione": "Lunga collana realizzata ad uncinetto con pietre di agata muschiata e fluorite, chiusura in ottone e cuore di agata. \nLa collana può essere indossata in vari modi e a proprio gusto personale essendo lunga 130 cm.",
+      "immagine": "/images/collana_occhio_di_tigre.jpg"
     }
   ]
 }
